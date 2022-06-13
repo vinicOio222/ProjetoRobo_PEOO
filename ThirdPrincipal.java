@@ -55,11 +55,18 @@ public class ThirdPrincipal {
 
             try{
                 listaRobos.get(0).mover(moves.nextInt(4) + 1);
+                
+            }catch(MovimentoInvalidoException index){ 
+                System.out.println("O robô "+listaRobos.get(0).getCor()+" fez um "+ index + "\n");  
+            }
+            try{
                 listaRobos.get(1).mover(moves.nextInt(4) + 1);
             }
             catch(MovimentoInvalidoException index){
-                System.out.println("\n" + index + "\n");
+                System.out.println("O robô "+listaRobos.get(1).getCor()+" fez um "+ index + "\n");            }finally{
+
             }
+
             try{
                 Thread.sleep(2500);
             }catch (InterruptedException e){
@@ -98,4 +105,3 @@ public class ThirdPrincipal {
         key.close();
     }
 }
-
